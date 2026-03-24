@@ -1,0 +1,49 @@
+body{
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  max-width: 900px;
+}
+
+.card{
+  border: 1px solid #ccc;
+  padding: 12px;
+  margin: 12px 0;
+}
+
+label{
+  display:block;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+input, select, button{
+  margin-top: 6px;
+  padding: 8px;
+}
+
+.msg{
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.fila{
+  display: flex;
+  gap: 8px;
+  align-items: end;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+#contenedorDocs .doc{
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 8px 0;
+}
+
+.estado{
+  font-weight: bold;
+}
+
+.danger{
+  margin-top: 10px;
+}

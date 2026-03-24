@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Entregable 2 - Control Documental (La Cruz SRL)</title>
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+
+  <h1>La Cruz SRL - Control Documental</h1>
+
+  <p>
+    Esta aplicación web simula el área de <b>Control Documental</b> de la empresa de transporte La Cruz SRL.
+    La idea es poder cargar documentos (Licencia, VTV, Seguro, etc.) para <b>choferes</b> o <b>unidades</b>.
+  </p>
+
+  <p>
+    La interacción se hace desde la página (DOM) usando formularios, eventos y guardando datos en <b>localStorage</b>,
+    para que no se pierdan al recargar.
+  </p>
+
+  <!--  Usuario -->
+
+  <div class="card">
+    <h2>Usuario</h2>
+    <form id="formUsuario">
+      <input id="inputUsuario" type="text" placeholder="Ingresá tu nombre" required>
+      <button type="submit">Guardar</button>
+    </form>
+    <p id="saludo" class="msg"></p>
+  </div>
+
+  <!-- Alta de documento -->
+
+  <div class="card">
+    <h2>Alta de documento</h2>
+
+    <form id="formDoc">
+      <label>Tipo de documento</label>
+      <select id="selectTipo"></select>
+
+      <label>Corresponde a</label>
+      <select id="selectDestino">
+        <option value="CHOFER">CHOFER</option>
+        <option value="UNIDAD">UNIDAD</option>
+      </select>
+
+      <label>ID del chofer / unidad</label>
+      <select id="selectIdRef"></select>
+
+      <label>Vencimiento</label>
+      <input id="inputVenc" type="date" required>
+
+      <button type="submit">Agregar</button>
+    </form>
+
+    <p id="msgDoc" class="msg"></p>
+  </div>
+
+  <!-- Listado + filtro -->
+
+  <div class="card">
+    <h2>Documentos cargados</h2>
+
+    <div class="fila">
+      <label>Filtrar por estado</label>
+      <select id="selectEstado">
+        <option value="TODOS">TODOS</option>
+        <option value="VIGENTE">VIGENTE</option>
+        <option value="POR_VENCER">POR_VENCER</option>
+        <option value="VENCIDO">VENCIDO</option>
+      </select>
+      <button id="btnFiltrar" type="button">Filtrar</button>
+      <button id="btnVerTodos" type="button">Ver todos</button>
+    </div>
+
+    <div id="contenedorDocs"></div>
+
+    <h3>Total: <span id="total">0</span></h3>
+    <button id="resetBtn" class="danger" type="button">Reiniciar</button>
+  </div>
+
+  <script src="./js/main.js"></script>
+</body>
+</html>
